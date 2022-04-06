@@ -28,18 +28,14 @@ let scontoAnziani = costoDistanza * 0.40;
 // Prezzo finale
 if(etàPasseggero < 18){
     let costoFinale = costoDistanza - scontoGiovani;
-    console.log("costo giovani", costoFinale);
+    let costoFinaleArrotondato = Math.round(costoFinale * 100) / 100;
+    document.getElementById('output').innerHTML += costoFinaleArrotondato;
 } else if(etàPasseggero > 65){
     let costoFinale = costoDistanza - scontoAnziani;
-    console.log("costo vecchi", costoFinale);
+    let costoFinaleArrotondato = Math.round(costoFinale * 100) / 100;
+    document.getElementById('output').innerHTML += costoFinaleArrotondato;
 } else{
     let costoFinale = costoDistanza;
-    console.log("costo altri", costoFinale);
+    let costoFinaleArrotondato = Math.round(costoFinale * 100) / 100;
+    document.getElementById('output').innerHTML += costoFinaleArrotondato;
 }
-
-// Arrotondamento
-let daPagare = Math.round(costoFinale * 100) / 100;
-    console.log("da pagare", daPagare);
-
-// Stampa
-// document.getElementById(cost).innerHTML = daPagare;
