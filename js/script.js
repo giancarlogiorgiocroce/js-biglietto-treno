@@ -9,8 +9,8 @@ Produci l'autput con due decimali.
     console.log('hello world');
 
 // Dati da richiedere all'utente
-const percorrenza = 30 //prompt("Perfavore inserisci la quantità di km in numeri");
-const etàPasseggero = 27 //prompt("Perfavore inserisci la tua età in numeri");
+const percorrenza = prompt("Perfavore inserisci la quantità di km in numeri");
+const etàPasseggero = prompt("Perfavore inserisci la tua età in numeri");
 
 document.getElementById('output-percorrenza').innerHTML += `${percorrenza} km`;
 document.getElementById('output-età').innerHTML += etàPasseggero;

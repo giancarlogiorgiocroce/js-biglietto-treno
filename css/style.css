@@ -1,7 +1,21 @@
 /*
     MAIN
 */
-
+main{
+    margin: 25vh 0;
+    border: 30px solid var(--bs-red);
+}
+section{
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+div{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+div img{
+    width: 100%;
+}
 /*
     /MAIN
 */
