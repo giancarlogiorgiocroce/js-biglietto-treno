@@ -9,41 +9,37 @@ Produci l'autput con due decimali.
     console.log('hello world');
 
 // Dati da richiedere all'utente
-const percorrenza = 10; //prompt
-const etàPasseggero = 27; //prompt
+const percorrenza = 31; //prompt
+const etàPasseggero = 7; //prompt
     console.log('Km da percorrere:', percorrenza);
     console.log('Età del passeggero:', etàPasseggero);
 
 // Prezzo base
 let costoDistanza = percorrenza * 0.21;
     console.log('Costo base:', costoDistanza, '€');
+let costoFinale = costoDistanza;
 
-
-
-
-    
-/*
-// Sconti possibili
-const scontoGiovani = costoDistanza - ((costoDistanza / 5) * 4);
+// Sconti applicabili
+let scontoGiovani = costoDistanza * 0.20;
     console.log('Sconto giovani se applicabile:', scontoGiovani, '€');
-
-const scontoAnziani = costoDistanza * 100 / 40;
+let scontoAnziani = costoDistanza * 0.40;
     console.log('Sconto anziani se applicabile:', scontoAnziani, '€');
-*/
 
-/*
-// Applicabilità degli sconti
-if(etàPasseggero > 18){
+// Prezzo finale
+if(etàPasseggero < 18){
     let costoFinale = costoDistanza - scontoGiovani;
-} else {
-    let costoFinale = costoFinale;
-};
-    console.log('Costo finale:', costoFinale, '€');
-
-if(etàPasseggero > 65){
+    console.log("costo giovani", costoFinale);
+} else if(etàPasseggero > 65){
     let costoFinale = costoDistanza - scontoAnziani;
-} else {
-    let costoFinale = costoFinale;
-};
-    console.log('Costo finale:', costoFinale, '€');
-*/
+    console.log("costo vecchi", costoFinale);
+} else{
+    let costoFinale = costoDistanza;
+    console.log("costo altri", costoFinale);
+}
+
+// Arrotondamento
+let daPagare = Math.round(costoFinale * 100) / 100;
+    console.log("da pagare", daPagare);
+
+// Stampa
+// document.getElementById(cost).innerHTML = daPagare;
