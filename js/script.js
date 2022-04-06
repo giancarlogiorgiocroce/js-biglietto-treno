@@ -9,14 +9,14 @@ Produci l'autput con due decimali.
     console.log('hello world');
 
 // Dati da richiedere all'utente
-const percorrenza = 31; //prompt
-const etàPasseggero = 7; //prompt
-    console.log('Km da percorrere:', percorrenza);
-    console.log('Età del passeggero:', etàPasseggero);
+const percorrenza = 30 //prompt("Perfavore inserisci la quantità di km in numeri");
+const etàPasseggero = 27 //prompt("Perfavore inserisci la tua età in numeri");
+
+document.getElementById('output-percorrenza').innerHTML += `${percorrenza} km`;
+document.getElementById('output-età').innerHTML += etàPasseggero;
 
 // Prezzo base
 let costoDistanza = percorrenza * 0.21;
-    console.log('Costo base:', costoDistanza, '€');
 let costoFinale = costoDistanza;
 
 // Sconti applicabili
@@ -29,13 +29,13 @@ let scontoAnziani = costoDistanza * 0.40;
 if(etàPasseggero < 18){
     let costoFinale = costoDistanza - scontoGiovani;
     let costoFinaleArrotondato = Math.round(costoFinale * 100) / 100;
-    document.getElementById('output').innerHTML += costoFinaleArrotondato;
+    document.getElementById('outputPrezzo').innerHTML += `${costoFinaleArrotondato} €`;
 } else if(etàPasseggero > 65){
     let costoFinale = costoDistanza - scontoAnziani;
     let costoFinaleArrotondato = Math.round(costoFinale * 100) / 100;
-    document.getElementById('output').innerHTML += costoFinaleArrotondato;
+    document.getElementById('outputPrezzo').innerHTML += `${costoFinaleArrotondato} €`;
 } else{
     let costoFinale = costoDistanza;
     let costoFinaleArrotondato = Math.round(costoFinale * 100) / 100;
-    document.getElementById('output').innerHTML += costoFinaleArrotondato;
+    document.getElementById('outputPrezzo').innerHTML += `${costoFinaleArrotondato} €`;
 }
